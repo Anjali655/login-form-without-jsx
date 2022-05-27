@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm a React app!</title>
+
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 220px 500px;
+            letter-spacing: 1px;
+            background-color: white;
+            border: 2px solid rgb(22, 21, 21);
+            border-radius: 10px;
+            padding: 40px;
+            display: inline-block;
+            font-weight: bold;
+            
+        }
+
+        label{
+            display: inline-block;
+            margin: 20px 0 10px;
+            }
+
+        input{
+            padding: 10px 12px;
+            border-radius: 4px;
+            border: 1.5px solid rgb(196, 13, 43);
+            background-color: white;
+            margin: 10px
+        }
+        label{
+            text-align: center;
+            margin:2px;
+            color:black;
+            font-weight: bold;
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <script src="https://unpkg.com/react@16.6.3/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@16.6.3/umd/react-dom.production.min.js"></script>
+    <script>
+
+let createElement = React.createElement
+
+        let rootElement = 
+        createElement('div', {},
+            createElement('h1', {}, "User's Account"),
+           
+            createElement('Form', {action: ''},
+                createElement('label', {}, "email: "),
+                createElement('input',{type:'email', placeholder:'abc@gmail.com'}),
+                createElement('br', {}),
+
+                createElement('label', {}, "Password: "),
+                createElement('input', {type:'text', placeholder:'password'}),
+                createElement('br', {}),
+
+                createElement('input', {type:'submit', value:'Log In'}),
+                createElement('br', {})
+            
+            ),
+        )
+
+
+      // The `ReactDOM` variable is set by the second `<script>` tag
+      // in the above HTML file
+      let domNode = document.getElementById('root')
+      ReactDOM.render(rootElement, domNode)
+    </script>
+  </body>
+</html>
